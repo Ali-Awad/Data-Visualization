@@ -1,0 +1,22 @@
+# Large binaries
+*.zip
+*.bmp
+*.mat
+*.pickle
+*.pkl
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Windows artifacts
+Thumbs.db
+desktop.ini
+*:Zone.Identifier
+
+# IDE
+.idea/
+.vscode/
+*.swp
+

@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jan 22 14:49:43 2025
+
+@author: aawad
+"""
+
+from combine_img import *
+import numpy as np
+import matplotlib.pyplot as plt
+from glob import glob
+
+root_dir = "./"
+extension = 'jpg'
+save_dir = "./"
+selected = ["160_png_jpg.jpg"\
+            ,"165_png_jpg.jpg"\
+            ,"193_png_jpg.jpg"\
+            ,"P1311085_png.jpg"]
+extension = ".jpg"
+
+
+    
+models = ['data_rep']#, 'Seg with Conf', 'Seg']
+images = []
+
+imagex = glob(f'{root_dir}/Alg./*{extension}', recursive=True)
+for image in imagex:
+    for model in models:
+        #images.append(Image.open(f'{root_dir}/{model}/{image}'))
+        images.append(Image.open(image))
+
+
+
+images = combine_images(columns=3, space=10, images = images)
+
+figure = np.asarray(images)
+plt.imsave(f'{save_dir}Coverage.jpeg',
+           figure, cmap=None, format='jpeg')
