@@ -1,8 +1,8 @@
 # Data-Visualization
 
-**Organize your images in a grid with quality values and color coding.**
+Organize your images in a grid with quality values and color coding.
 
-Utilities for image grids with quality values and color coding. compare models side-by-side, show quality index (Q-index) or other metrics per sample, and build correlation layouts. Ideal for object detection, enhancement research, and organizing results.
+Utilities for image grids with quality values and color coding. Compare models side-by-side, show Q-index or other metrics per sample, and build correlation layouts. Quality values for each image are fetched from a CSV file. Ideal for object detection, enhancement research, and organizing results.
 
 ## Quick Start
 
@@ -13,9 +13,11 @@ python demo.py
 
 ## Example Outputs
 
-**Image grid with quality values and color coding** — Q-index or other metrics per sample:
+Image grid with quality values and color coding. Q-index or other metrics per sample (values fetched from CSV):
 
 ![q-index](q-index.png)
+
+Data: Quality values (Q-index, UIQM, etc.) for each image are read from CSV files, one row per image with columns for each metric.
 
 ## Structure
 
