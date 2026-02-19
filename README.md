@@ -1,19 +1,40 @@
 # Data-Visualization
 
-Visualization tools for object detection and segmentation results, including figure generation for publications.
+**Organize your images in a grid with quality values and color coding.**
+
+Utilities for image grids with quality values and color coding. compare models side-by-side, show quality index (Q-index) or other metrics per sample, and build correlation layouts. Ideal for object detection, enhancement research, and organizing results.
+
+## Quick Start
+
+```bash
+pip install -r requirements.txt
+python demo.py
+```
+
+## Example Outputs
+
+**Image grid with quality values and color coding** — Q-index or other metrics per sample:
+
+![q-index](q-index.png)
 
 ## Structure
 
-- **Visualization Codes/** -- Core plotting scripts (violin plots, regression plots, bar charts, combined figures)
-- **generate_figure.py / generate_labels.py** -- Publication figure and label generators
-- **combine_img.py** -- Image grid combiner for side-by-side comparisons
-- **Unanimous_fig.py** -- Unanimous agreement visualization
-- **colorbar.py** -- Custom colorbar generation
-- **mAP_hists_v3_two_groups_stds.py** -- mAP histogram with standard deviation bands
-- **Bnethic grid.py / goby grid.py / mussel grid.py** -- Species-specific detection grid figures
-- **OBB*, Seg*, SCP*, GT*, Alg.%** -- Sample result images organized by task (oriented bounding box, segmentation, SCP approaches)
-- **Data_rep/** -- Dataset representative samples
+```
+├── src/                  # Core utilities
+│   ├── combine_img.py    # Image grid layout (combine_images, get_concat_h/v)
+│   ├── generate_labels.py  # Text labels as PIL images
+│   └── colorbar.py       # Custom colorbar as image
+├── examples/             # Configurable example scripts
+│   ├── violin_plot.py    # Violin plots from CSV
+│   └── image_grid.py     # Model comparison grids
+├── demo.py               # Demo (generates sample figures)
+├── samples/              # Sample outputs
+└── requirements.txt
+```
 
 ## Requirements
 
-- Python 3.x (matplotlib, seaborn, pandas, PIL/Pillow)
+- Python 3.8+
+- matplotlib, numpy, pandas, Pillow, seaborn
+
+Optional: `cmasher` for extended colormaps in `colbar()`.
